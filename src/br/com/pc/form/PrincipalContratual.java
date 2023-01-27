@@ -1,8 +1,9 @@
 package br.com.pc.form;
 
-import br.com.pc.layout.Resumo;
+import br.com.pc.layout.ResumoContratual;
 import br.com.pc.protocolo.classe.GerarArquivo;
 import br.com.pc.protocolo.classe.Iniciar;
+import br.com.pc.protocolo.classe.IniciarContratual;
 import br.com.pc.protocolo.classe.IniciarPai;
 import br.com.pc.protocolo.classe.Unicode;
 import java.util.ArrayList;
@@ -12,12 +13,12 @@ import java.util.List;
  *
  * @author Paulo César
  */
-public class Principal extends PrincipalPai{
+public class PrincipalContratual extends PrincipalPai{
+    
+    private List<ResumoContratual> listaResumo;
+    public static final String TITULO = "evtAltContratual";
 
-    private List<Resumo> listaResumo;
-    public static final String TITULO = "evtAdmissao";
-
-    public Principal() {
+    public PrincipalContratual() {
         inicializar();
     }
     
@@ -28,14 +29,14 @@ public class Principal extends PrincipalPai{
     
     @Override
     public void btProcessar(){
-        IniciarPai<Resumo> iniciar;
+        IniciarPai<ResumoContratual> iniciar;
         if (ckMultiplos.isSelected()) {
-            iniciar = new Iniciar(fileAbrirMult,listaResumo);
+            iniciar = new IniciarContratual(fileAbrirMult,listaResumo);
         }else{
-            iniciar = new Iniciar(fileAbrir,listaResumo);
+            iniciar = new IniciarContratual(fileAbrir,listaResumo);
         }
         texteArea.setText("");
-        for (Resumo resumo : iniciar.getListaResumo()) {
+        for (ResumoContratual resumo : iniciar.getListaResumo()) {
             texteArea.append(resumo.toString());
             texteArea.append(System.lineSeparator());
             if (fileSalvar != null) {
@@ -60,6 +61,5 @@ public class Principal extends PrincipalPai{
         }
         
     }
-    
     
 }

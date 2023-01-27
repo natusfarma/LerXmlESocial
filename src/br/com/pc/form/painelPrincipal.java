@@ -9,12 +9,12 @@ package br.com.pc.form;
  *
  * @author Paulo-PC
  */
-public class painelPrincipal extends javax.swing.JPanel {
+public class PainelPrincipal extends javax.swing.JPanel {
 
     /**
      * Creates new form painelPrincipal
      */
-    public painelPrincipal() {
+    public PainelPrincipal() {
         initComponents();
     }
 

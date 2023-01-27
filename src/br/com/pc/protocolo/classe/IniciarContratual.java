@@ -1,7 +1,9 @@
 package br.com.pc.protocolo.classe;
 
 import br.com.pc.layout.Layout;
+import br.com.pc.layout.LayoutEvAltContratual;
 import br.com.pc.layout.Resumo;
+import br.com.pc.layout.ResumoContratual;
 import java.io.File;
 import java.util.List;
 
@@ -9,21 +11,19 @@ import java.util.List;
  *
  * @author Paulo César
  */
-public class Iniciar extends IniciarPai<Resumo>{
-
-    public Iniciar(File[] files, List<Resumo> listaResumo) {
+public class IniciarContratual extends IniciarPai<ResumoContratual>{
+    
+    public IniciarContratual(File[] files, List<ResumoContratual> listaResumo) {
         super(files, listaResumo);
     }
     
-    public Iniciar(File file, List<Resumo> listaResumo) {
+    public IniciarContratual(File file, List<ResumoContratual> listaResumo) {
         super(file, listaResumo);
     }
   
     @Override
     public void principal(File arquivo) throws Exception{
-        Layout layout = new Layout(arquivo);
+        LayoutEvAltContratual layout = new LayoutEvAltContratual(arquivo);
         getListaResumo().addAll(layout.dadosEmpregado());
     }
-
-    
 }

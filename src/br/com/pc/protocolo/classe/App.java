@@ -1,6 +1,8 @@
 package br.com.pc.protocolo.classe;
 
 import br.com.pc.form.Principal;
+import br.com.pc.form.PrincipalContratual;
+import br.com.pc.form.PrincipalPai;
 import javax.swing.JFrame;
 
 /**
@@ -17,11 +19,23 @@ public class App {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame();
-        
+                String VERSAO = "V3.0";
+                System.out.println("Parâmetro do Sistema");
+                System.out.println("Caso não digitar nada o padrão é [*]");
+                System.out.println("\t[admissao]");
+                System.out.println("\t[contratual]*");
                 frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-                Principal start = new Principal();
+                PrincipalPai start = null;
+                if (args.length == 0 || args[0].equals("contratual")) {
+                    start = new PrincipalContratual();
+                    frame.setTitle("Sistema Desenvolvido por Paulo César 27/01/2023 " +VERSAO+" ["+PrincipalContratual.TITULO+"]");
+                }else{
+                    start = new Principal();
+                    frame.setTitle("Sistema Desenvolvido por Paulo César 12/09/2022 " +VERSAO+" ["+Principal.TITULO+"]");
+                }
+//                start = new PrincipalContratual();
+//                frame.setTitle("Sistema Desenvolvido por Paulo César 27/01/2023 V3.0 ["+PrincipalContratual.TITULO+"]");
                 frame.add(start);
-                frame.setTitle("Sistema Desenvolvido por Paulo César 12/09/2022 [evtAdmissao] V3.0");
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
