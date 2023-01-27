@@ -21,7 +21,7 @@ public class App {
                 frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 Principal start = new Principal();
                 frame.add(start);
-                frame.setTitle("Sistema Desenvolvido por Paulo César 12/09/2022 V2.0");
+                frame.setTitle("Sistema Desenvolvido por Paulo César 12/09/2022 [evtAdmissao] V3.0");
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);

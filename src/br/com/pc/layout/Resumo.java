@@ -68,6 +68,7 @@ public class Resumo {
         this.cpfTrabalhador = cpfTrabalhador;
     }
     
+        
     @Override
     public String toString() {
         return  getMatricula() + ";" +
