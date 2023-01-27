@@ -33,8 +33,6 @@ public class App {
                     start = new Principal();
                     frame.setTitle("Sistema Desenvolvido por Paulo César 12/09/2022 " +VERSAO+" ["+Principal.TITULO+"]");
                 }
-//                start = new PrincipalContratual();
-//                frame.setTitle("Sistema Desenvolvido por Paulo César 27/01/2023 V3.0 ["+PrincipalContratual.TITULO+"]");
                 frame.add(start);
                 frame.pack();
                 frame.setLocationRelativeTo(null);
